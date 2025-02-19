@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const Padding(
-      padding: EdgeInsets.only(top: 40, bottom: 10, left: 10, right: 10),
+      padding: EdgeInsets.only(top: 50, bottom: 10, left: 10, right: 10),
       child: Align(
           alignment: Alignment.topCenter,
           child: Text('Hello Flutter from metanit.com',

@@ -1,0 +1,134 @@
+{
+  "Genres": {
+    "1": {
+      "name": "Brazilian Funk",
+      "cover": "./lib/assets/img/covers/genre-playlists/brazilian-funk.jpg",
+      "fans": 120133,
+      "updated": "4 weeks ago",
+      "description": "Perfect for dancing or turning up the energy at any party!",
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    "2": {
+      "name": "Drum and Bass",
+      "cover": "./lib/assets/img/covers/genre-playlists/drum-and-bass.jpg",
+      "fans": 95477,
+      "updated": "1 weeks ago",
+      "description": "Fast-paced beats and heavy basslines to keep your adrenaline pumping.",
+      "tracks": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    },
+    "3": {
+      "name": "Hip-Hop",
+      "cover": "./lib/assets/img/covers/genre-playlists/hip-hop.jpg",
+      "fans": 123780,
+      "updated": "1 day ago",
+      "description": "From old-school classics to modern bangers! Keep it real, keep it fresh.",
+      "tracks": [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+    },
+    "4": {
+      "name": "Phonk",
+      "cover": "./lib/assets/img/covers/genre-playlists/phonk.jpg",
+      "fans": 239000,
+      "updated": "1 month ago",
+      "description": "Dark, gritty, and hypnotic - it is Phonk!",
+      "tracks": [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
+    },
+    "5": {
+      "name": "EDM",
+      "cover": "./lib/assets/img/covers/genre-playlists/edm.jpg",
+      "fans": 590027,
+      "updated": "23 days ago",
+      "description": "Get ready to rave! Turn it up and feel the bass drop!",
+      "tracks": [41, 42, 43, 44, 45]
+    },
+    "6": {
+      "name": "Tropical House",
+      "cover": "./lib/assets/img/covers/genre-playlists/tropical-house.jpg",
+      "fans": 226448,
+      "updated": "1 week ago",
+      "description": "Perfect for chilling by the beach or dreaming of warmer days.",
+      "tracks": [46, 47, 48, 49, 50]
+    },
+    "7": {
+      "name": "Russian Rap",
+      "cover": "./lib/assets/img/covers/genre-playlists/russian-rap.jpg",
+      "fans": 56711,
+      "updated": "12 days ago",
+      "description": "Russian rap brings hard-hitting lyrics and beats that hit deep.",
+      "tracks": [51, 52, 53, 54, 55]
+    },
+    "8": {
+      "name": "Indie",
+      "cover": "./lib/assets/img/covers/genre-playlists/indie.jpg",
+      "fans": 1056711,
+      "updated": "4 weeks ago",
+      "description": "Heartfelt lyrics, soothing melodies, and a touch of magic.",
+      "tracks": [56, 57, 58, 59, 60]
+    }
+  },
+  "Your mixes": {
+    "1": {
+      "name": "Brazilian Funk",
+      "cover": "./lib/assets/img/covers/genre-playlists/brazilian-funk.jpg",
+      "fans": 120133,
+      "updated": "4 weeks ago",
+      "description": "Perfect for dancing or turning up the energy at any party!",
+      "tracks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    "2": {
+      "name": "Drum and Bass",
+      "cover": "./lib/assets/img/covers/genre-playlists/drum-and-bass.jpg",
+      "fans": 95477,
+      "updated": "1 weeks ago",
+      "description": "Fast-paced beats and heavy basslines to keep your adrenaline pumping.",
+      "tracks": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    },
+    "3": {
+      "name": "Hip-Hop",
+      "cover": "./lib/assets/img/covers/genre-playlists/hip-hop.jpg",
+      "fans": 123780,
+      "updated": "1 day ago",
+      "description": "From old-school classics to modern bangers! Keep it real, keep it fresh.",
+      "tracks": [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+    },
+    "4": {
+      "name": "Phonk",
+      "cover": "./lib/assets/img/covers/genre-playlists/phonk.jpg",
+      "fans": 239000,
+      "updated": "1 month ago",
+      "description": "Dark, gritty, and hypnotic - it is Phonk!",
+      "tracks": [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
+    },
+    "5": {
+      "name": "EDM",
+      "cover": "./lib/assets/img/covers/genre-playlists/edm.jpg",
+      "fans": 590027,
+      "updated": "23 days ago",
+      "description": "Get ready to rave! Turn it up and feel the bass drop!",
+      "tracks": [41, 42, 43, 44, 45]
+    },
+    "6": {
+      "name": "Tropical House",
+      "cover": "./lib/assets/img/covers/genre-playlists/tropical-house.jpg",
+      "fans": 226448,
+      "updated": "1 week ago",
+      "description": "Perfect for chilling by the beach or dreaming of warmer days.",
+      "tracks": [46, 47, 48, 49, 50]
+    },
+    "7": {
+      "name": "Russian Rap",
+      "cover": "./lib/assets/img/covers/genre-playlists/russian-rap.jpg",
+      "fans": 56711,
+      "updated": "12 days ago",
+      "description": "Russian rap brings hard-hitting lyrics and beats that hit deep.",
+      "tracks": [51, 52, 53, 54, 55]
+    },
+    "8": {
+      "name": "Indie",
+      "cover": "./lib/assets/img/covers/genre-playlists/indie.jpg",
+      "fans": 1056711,
+      "updated": "4 weeks ago",
+      "description": "Heartfelt lyrics, soothing melodies, and a touch of magic.",
+      "tracks": [56, 57, 58, 59, 60]
+    }
+  }
+}

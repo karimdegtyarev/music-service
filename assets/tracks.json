@@ -1,0 +1,544 @@
+{
+  "1": {
+    "title": "GPS",
+    "album": "GPS",
+    "release_date": "11/09/2024",
+    "cover": "./lib/assets/img/covers/track-covers/Brevis, It's Different, Dragon Boys, Blueface - GPS.jpg",
+    "path": "./lib/assets/music/brazilian-funk/Brevis, It's Different, Dragon Boys, Blueface - GPS.mp3",
+    "artist_id": [1, 2, 3, 4],
+    "duration": 98.403265
+  },
+  "2": {
+    "title": "EMPTY FUNK",
+    "album": "EMPTY FUNK",
+    "release_date": "27/12/2024",
+    "cover": "./lib/assets/img/covers/track-covers/DJ Anemia, crier, sixnite - EMPTY FUNK.jpg",
+    "path": "./lib/assets/music/brazilian-funk/DJ Anemia, crier, sixnite - EMPTY FUNK.mp3",
+    "artist_id": [5, 6, 7],
+    "duration": 121.70449
+  },
+  "3": {
+    "title": "OH MAH GAH!",
+    "album": "OH MAH GAH!",
+    "release_date": "14/02/2025",
+    "cover": "./lib/assets/img/covers/track-covers/SH3RWIN, viralune, MC LONE - OH MAH GAH!.jpg",
+    "path": "./lib/assets/music/brazilian-funk/SH3RWIN, viralune, MC LONE - OH MAH GAH!.mp3",
+    "artist_id": [8, 9, 10],
+    "duration": 91.245714
+  },
+  "4": {
+    "title": "ZORYA",
+    "album": "ZORYA",
+    "release_date": "07/02/2025",
+    "cover": "./lib/assets/img/covers/track-covers/SHIPU, CLOUD ZERO, NCTS - ZORYA.jpg",
+    "path": "./lib/assets/music/brazilian-funk/SHIPU, CLOUD ZERO, NCTS - ZORYA.mp3",
+    "artist_id": [11, 12, 13],
+    "duration": 134.894875
+  },
+  "5": {
+    "title": "ANGEL",
+    "album": "ANGEL",
+    "release_date": "21/06/2024",
+    "cover": "./lib/assets/img/covers/track-covers/SHIPU, CLOUD ZERO - ANGEL.jpg",
+    "path": "./lib/assets/music/brazilian-funk/SHIPU, CLOUD ZERO - ANGEL.mp3",
+    "artist_id": [11, 12],
+    "duration": 99.73551
+  },
+  "6": {
+    "title": "FREAKS FUNK",
+    "album": "FREAKS FUNK",
+    "release_date": "06/12/2024",
+    "cover": "./lib/assets/img/covers/track-covers/SØMATIC - FREAKS FUNK.jpg",
+    "path": "./lib/assets/music/brazilian-funk/SØMATIC - FREAKS FUNK.wav",
+    "artist_id": [14],
+    "duration": 98.181837
+  },
+  "7": {
+    "title": "Micrology! (Slowed Reverb)",
+    "album": "Micrology!",
+    "release_date": "04/10/2024",
+    "cover": "./lib/assets/img/covers/track-covers/TEENWXVE ANDROMEDA - Micrology! (Slowed  Reverb).jpg",
+    "path": "./lib/assets/music/brazilian-funk/TEENWXVE ANDROMEDA - Micrology! (Slowed  Reverb).mp3",
+    "artist_id": [15, 16],
+    "duration": 125.596735
+  },
+  "8": {
+    "title": "ZIRKA ULTRAFUNK",
+    "album": "Russian Ultrafunk",
+    "release_date": "07/12/2024",
+    "cover": "./lib/assets/img/covers/track-covers/wharoxmane, satirin, FUNK DEMON, EVO - ZIRKA ULTRAFUNK.jpg",
+    "path": "./lib/assets/music/brazilian-funk/wharoxmane, satirin, FUNK DEMON, EVO - ZIRKA ULTRAFUNK.mp3",
+    "artist_id": [17, 18, 19, 20],
+    "duration": 108.215147
+  },
+  "9": {
+    "title": "HEADS WILL ROLL (PR FUNK)",
+    "album": "HEADS WILL ROLL (PR FUNK)",
+    "release_date": "26/04/2024",
+    "cover": "./lib/assets/img/covers/track-covers/xlout, Pxlish Beatz - HEADS WILL ROLL (PR FUNK).jpg",
+    "path": "./lib/assets/music/brazilian-funk/xlout, Pxlish Beatz - HEADS WILL ROLL (PR FUNK).mp3",
+    "artist_id": [21, 22],
+    "duration": 104.2352
+  },
+  "10": {
+    "title": "DERNIERE DANCE FUNK",
+    "album": "DERNIERE DANCE FUNK",
+    "release_date": "23/02/2024",
+    "cover": "./lib/assets/img/covers/track-covers/ZODIVK, YXUNGXROTICA, MC KRAKEN - DERNIERE DANCE FUNK.jpg",
+    "path": "./lib/assets/music/brazilian-funk/ZODIVK, YXUNGXROTICA, MC KRAKEN - DERNIERE DANCE FUNK.mp3",
+    "artist_id": [23, 24, 25],
+    "duration": 91.512
+  },
+  "11": {
+    "title": "Piranha",
+    "album": "Piranha",
+    "release_date": "29/01/2022",
+    "cover": "./lib/assets/img/covers/track-covers/Cartoon, Jeja, pluuto - Piranha.jpg",
+    "path": "./lib/assets/music/drum-and-bass/Cartoon, Jeja, pluuto - Piranha.mp3",
+    "artist_id": [26, 27, 28],
+    "duration": 187.608
+  },
+  "12": {
+    "title": "Bombalaya - Blooom Remix",
+    "album": "Bombalaya (Blooom Remix)",
+    "release_date": "16/05/2024",
+    "cover": "./lib/assets/img/covers/track-covers/DNMO, Wolfy Lights, Blooom - Bombalaya.jpg",
+    "path": "./lib/assets/music/drum-and-bass/DNMO, Wolfy Lights, Blooom - Bombalaya.mp3",
+    "artist_id": [29, 30, 31],
+    "duration": 248.607347
+  },
+  "13": {
+    "title": "Out My Head",
+    "album": "Out My Head",
+    "release_date": "10/01/2025",
+    "cover": "./lib/assets/img/covers/track-covers/Freaks & Geeks, Flowidus - Out My Head.png",
+    "path": "./lib/assets/music/drum-and-bass/Freaks & Geeks, Flowidus - Out My Head.mp3",
+    "artist_id": [32, 33],
+    "duration": 214.047347
+  },
+  "14": {
+    "title": "Flow",
+    "album": "Flow",
+    "release_date": "13/04/2023",
+    "cover": "./lib/assets/img/covers/track-covers/hayve - Flow.jpg",
+    "path": "./lib/assets/music/drum-and-bass/hayve - Flow.mp3",
+    "artist_id": [34],
+    "duration": 203.7583
+  },
+  "15": {
+    "title": "Hey Ya!",
+    "album": "Hey Ya!",
+    "release_date": "13/12/2023",
+    "cover": "./lib/assets/img/covers/track-covers/LEOWI, Lucky Luke - Hey Ya!.jpg",
+    "path": "./lib/assets/music/drum-and-bass/LEOWI, Lucky Luke - Hey Ya!.mp3",
+    "artist_id": [35, 36],
+    "duration": 188.607278
+  },
+  "16": {
+    "title": "Abyss",
+    "album": "Abyss",
+    "release_date": "17/11/2023",
+    "cover": "./lib/assets/img/covers/track-covers/Metrik - Abyss.jpg",
+    "path": "./lib/assets/music/drum-and-bass/Metrik - Abyss.mp3",
+    "artist_id": [37],
+    "duration": 237.270204
+  },
+  "17": {
+    "title": "WORLDS AWAY",
+    "album": "CHALLENGER (DELUXE)",
+    "release_date": "18/10/2024",
+    "cover": "./lib/assets/img/covers/track-covers/REAPER, AMAGII, TINYKVT - WORLDS AWAY.jpg",
+    "path": "./lib/assets/music/drum-and-bass/REAPER, AMAGII, TINYKVT - WORLDS AWAY.mp3",
+    "artist_id": [38, 39, 40],
+    "duration": 249.70449
+  },
+  "18": {
+    "title": "IMY (feat. Bella Renee)",
+    "album": "DISRUPTOR LP",
+    "release_date": "06/05/2022",
+    "cover": "./lib/assets/img/covers/track-covers/REAPER, Bella Renee - IMY.jpg",
+    "path": "./lib/assets/music/drum-and-bass/REAPER, Bella Renee - IMY.mp3",
+    "artist_id": [38, 41],
+    "duration": 166.948571
+  },
+  "19": {
+    "title": "Can You Feel It",
+    "album": "Can You Feel It",
+    "release_date": "06/02/2017",
+    "cover": "./lib/assets/img/covers/track-covers/T-Mass, Enthic - Can You Feel It.jpg",
+    "path": "./lib/assets/music/drum-and-bass/T-Mass, Enthic - Can You Feel It.mp3",
+    "artist_id": [42, 43],
+    "duration": 212.114275
+  },
+  "20": {
+    "title": "Mortals",
+    "album": "Mortals",
+    "release_date": "15/12/2016",
+    "cover": "./lib/assets/img/covers/track-covers/Warriyo - Mortals.jpg",
+    "path": "./lib/assets/music/drum-and-bass/Warriyo - Mortals.mp3",
+    "artist_id": [44],
+    "duration": 228.388571
+  },
+  "21": {
+    "title": "MUDD",
+    "album": "MUDD",
+    "release_date": "02/09/2022",
+    "cover": "./lib/assets/img/covers/track-covers/$werve, Grioten, Day$okee - MUDD.jpeg",
+    "path": "./lib/assets/music/hip-hop/$werve, Grioten, Day$okee - MUDD.mp3",
+    "artist_id": [45, 46, 47],
+    "duration": 141.768
+  },
+  "22": {
+    "title": "Stay With Me",
+    "album": "Stay With Me",
+    "release_date": "11/10/2020",
+    "cover": "./lib/assets/img/covers/track-covers/1nonly - Stay With Me.jpg",
+    "path": "./lib/assets/music/hip-hop/1nonly - Stay With Me.mp3",
+    "artist_id": [48],
+    "duration": 141.56075
+  },
+  "23": {
+    "title": "Drop It Like It's Hot",
+    "album": "Drop It Like It's Hot",
+    "release_date": "31/05/2020",
+    "cover": "./lib/assets/img/covers/track-covers/HAARPER - Drop It Like It's Hot.jpg",
+    "path": "./lib/assets/music/hip-hop/HAARPER - Drop It Like It's Hot.mp3",
+    "artist_id": [49],
+    "duration": 136.019592
+  },
+  "24": {
+    "title": "THE ALCHEMIST",
+    "album": "THE ALCHEMIST",
+    "release_date": "30/07/2020",
+    "cover": "./lib/assets/img/covers/track-covers/HAARPER - THE ALCHEMIST.jpg",
+    "path": "./lib/assets/music/hip-hop/HAARPER - THE ALCHEMIST.mp3",
+    "artist_id": [49],
+    "duration": 116.715102
+  },
+  "25": {
+    "title": "Last Laugh",
+    "album": "Last Laugh",
+    "release_date": "21/04/2024",
+    "cover": "./lib/assets/img/covers/track-covers/iamjakehill - Last Laugh.jpeg",
+    "path": "./lib/assets/music/hip-hop/iamjakehill - Last Laugh.mp3",
+    "artist_id": [50],
+    "duration": 118.032
+  },
+  "26": {
+    "title": "9mm",
+    "album": "Memphis Cult Vol. 6",
+    "release_date": "23/02/2023",
+    "cover": "./lib/assets/img/covers/track-covers/Memphis Cult, Groove Dealers, SPLYXER - 9mm.jpg",
+    "path": "./lib/assets/music/hip-hop/Memphis Cult, Groove Dealers, SPLYXER - 9mm.mp3",
+    "artist_id": [51, 52, 53],
+    "duration": 86.859256
+  },
+  "27": {
+    "title": "Death Lotto",
+    "album": "Death Lotto",
+    "release_date": "11/07/2022",
+    "cover": "./lib/assets/img/covers/track-covers/ovg!, Grioten - Death Lotto.jpg",
+    "path": "./lib/assets/music/hip-hop/ovg!, Grioten - Death Lotto.mp3",
+    "artist_id": [54, 46],
+    "duration": 133.929796
+  },
+  "28": {
+    "title": "Rave in the Grave",
+    "album": "Bohemian Psycho",
+    "release_date": "31/03/2019",
+    "cover": "./lib/assets/img/covers/track-covers/REDZED - Rave in the Grave.jpg",
+    "path": "./lib/assets/music/hip-hop/REDZED - Rave in the Grave.mp3",
+    "artist_id": [55],
+    "duration": 145.16565
+  },
+  "29": {
+    "title": "lick!",
+    "album": "lick!",
+    "release_date": "09/08/2024",
+    "cover": "./lib/assets/img/covers/track-covers/Sadfriendd, Ghostface Playa - lick!.jpeg",
+    "path": "./lib/assets/music/hip-hop/Sadfriendd, Ghostface Playa - lick!.mp3",
+    "artist_id": [56, 57],
+    "duration": 101.041633
+  },
+  "30": {
+    "title": "A HOCKEY MASK AND A REAL BAD ATTITUDE",
+    "album": "A HOCKEY MASK AND A REAL BAD ATTITUDE",
+    "release_date": "07/01/2022",
+    "cover": "./lib/assets/img/covers/track-covers/SXMPRA, Teddy Slugz - A HOCKEY MASK AND A REAL BAD ATTITUDE.jpeg",
+    "path": "./lib/assets/music/hip-hop/SXMPRA, Teddy Slugz - A HOCKEY MASK AND A REAL BAD ATTITUDE.mp3",
+    "artist_id": [58, 59],
+    "duration": 133.903678
+  },
+  "31": {
+    "title": "krushed!",
+    "album": "krushed!",
+    "release_date": "05/08/2023",
+    "cover": "./lib/assets/img/covers/track-covers/$werve - krushed!.jpg",
+    "path": "./lib/assets/music/phonk/$werve - krushed!.mp3",
+    "artist_id": [60],
+    "duration": 98.220408
+  },
+  "32": {
+    "title": "Close Eyes",
+    "album": "Close Eyes",
+    "release_date": "11/02/2022",
+    "cover": "./lib/assets/img/covers/track-covers/DVRST - Close Eyes.jpg",
+    "path": "./lib/assets/music/phonk/DVRST - Close Eyes.mp3",
+    "artist_id": [61],
+    "duration": 132.388571
+  },
+  "33": {
+    "title": "CUTE DEPRESSED",
+    "album": "CUTE DEPRESSED",
+    "release_date": "01/03/2023",
+    "cover": "./lib/assets/img/covers/track-covers/dyan dxddy - CUTE DEPRESSED.jpg",
+    "path": "./lib/assets/music/phonk/dyan dxddy - CUTE DEPRESSED.mp3",
+    "artist_id": [62],
+    "duration": 97.018776
+  },
+  "34": {
+    "title": "NITE",
+    "album": "NITE",
+    "release_date": "21/01/2024",
+    "cover": "./lib/assets/img/covers/track-covers/ELVEN DIOR - NITE.jpg",
+    "path": "./lib/assets/music/phonk/ELVEN DIOR - NITE.mp3",
+    "artist_id": [
+      63
+    ],
+    "duration": 98.507755
+  },
+  "35": {
+    "title": "Haunted House",
+    "album": "Haunted House",
+    "release_date": "29/11/2021",
+    "cover": "./lib/assets/img/covers/track-covers/Kaito Shoma - Haunted House.jpg",
+    "path": "./lib/assets/music/phonk/Kaito Shoma - Haunted House.mp3",
+    "artist_id": [64],
+    "duration": 223.164082
+  },
+  "36": {
+    "title": "Live Another Day",
+    "album": "Live Another Day",
+    "release_date": "11/03/2020",
+    "cover": "./lib/assets/img/covers/track-covers/KORDHELL - Live Another Day.jpg",
+    "path": "./lib/assets/music/phonk/KORDHELL - Live Another Day.mp3",
+    "artist_id": [65],
+    "duration": 133.642449
+  },
+  "37": {
+    "title": "Murder In My Mind",
+    "album": "Murder In My Mind",
+    "release_date": "02/02/2023",
+    "cover": "./lib/assets/img/covers/track-covers/KORDHELL - Murder In My Mind.jpg",
+    "path": "./lib/assets/music/phonk/KORDHELL - Murder In My Mind.mp3",
+    "artist_id": [65],
+    "duration": 145.031837
+  },
+  "38": {
+    "title": "I Can Fly",
+    "album": "I Can Fly",
+    "release_date": "03/01/2024",
+    "cover": "./lib/assets/img/covers/track-covers/SØMATIC - I Can Fly.jpg",
+    "path": "./lib/assets/music/phonk/SØMATIC - I Can Fly.wav",
+    "artist_id": [14],
+    "duration": 159.272744
+  },
+  "39": {
+    "title": "ANUBIS",
+    "album": "ANUBIS",
+    "release_date": "23/06/2021",
+    "cover": "./lib/assets/img/covers/track-covers/KUTE & RAIZHELL - ANUBIS.jpg",
+    "path": "./lib/assets/music/phonk/KUTE & RAIZHELL - ANUBIS.mp3",
+    "artist_id": [66, 67],
+    "duration": 131.500408
+  },
+  "40": {
+    "title": "AVOID ME",
+    "album": "AVOID ME",
+    "release_date": "10/03/2021",
+    "cover": "./lib/assets/img/covers/track-covers/KUTE - AVOID ME.jpg",
+    "path": "./lib/assets/music/phonk/KUTE - AVOID ME.mp3",
+    "artist_id": [66],
+    "duration": 105.822041
+  },
+  "41": {
+    "title": "We Found Love",
+    "album": "We Found Love",
+    "release_date": "23/01/2008",
+    "cover": "./lib/assets/img/covers/track-covers/Calvin Harris - We Found Love.jpg",
+    "path": "./lib/assets/music/edm/Calvin Harris - We Found Love.mp3",
+    "artist_id": [68, 69],
+    "duration": 215.562449
+  },
+  "42": {
+    "title": "Infinity",
+    "album": "Infinity",
+    "release_date": "13/011/2010",
+    "cover": "./lib/assets/img/covers/track-covers/Jaymes Young - Infinity.jpg",
+    "path": "./lib/assets/music/edm/Jaymes Young - Infinity.mp3",
+    "artist_id": [70],
+    "duration": 237.766531
+  },
+  "43": {
+    "title": "Fight Back With Love Tonight",
+    "album": "Fight Back With Love Tonight",
+    "release_date": "21/10/2007",
+    "cover": "./lib/assets/img/covers/track-covers/Kush Kush - Fight Back With Love Tonight.jpg",
+    "path": "./lib/assets/music/edm/Kush Kush - Fight Back With Love Tonight.mp3",
+    "artist_id": [71],
+    "duration": 206.319456
+  },
+  "44": {
+    "title": "Leon On",
+    "album": "Peace Is The Mission : Extended",
+    "release_date": "27/11/2015",
+    "cover": "./lib/assets/img/covers/track-covers/Major Lazer - Lean On.jpg",
+    "path": "./lib/assets/music/edm/Major Lazer - Lean On.mp3",
+    "artist_id": [72, 73, 74],
+    "duration": 176.587755
+  },
+  "45": {
+    "title": "Titans",
+    "album": "Music Is The Weapon (Reloaded)",
+    "release_date": "26/03/2021",
+    "cover": "./lib/assets/img/covers/track-covers/Major Lazer - Titans.jpg",
+    "path": "./lib/assets/music/edm/Major Lazer - Titans.mp3",
+    "artist_id": [72, 75, 76, 77],
+    "duration": 199.209796
+  },
+  "46": {
+    "title": "Baianá",
+    "album": "Baianá",
+    "release_date": "16/06/2022",
+    "cover": "./lib/assets/img/covers/track-covers/Bakermat - Baiana.jpg",
+    "path": "./lib/assets/music/tropical house/Bakermat - Baiana.mp3",
+    "artist_id": [78],
+    "duration": 182.230204
+  },
+  "47": {
+    "title": "My Way",
+    "album": "My Way",
+    "release_date": "05/11/2007",
+    "cover": "./lib/assets/img/covers/track-covers/Calvin Harris - My Way.jpg",
+    "path": "./lib/assets/music/tropical house/Calvin Harris - My Way.mp3",
+    "artist_id": [69],
+    "duration": 211.2032
+  },
+  "48": {
+    "title": "Whatever",
+    "album": "Whatever",
+    "release_date": "23/01/2009",
+    "cover": "./lib/assets/img/covers/track-covers/Kygo, Ava Max - Whatever.jpg",
+    "path": "./lib/assets/music/tropical house/Kygo, Ava Max - Whatever.mp3",
+    "artist_id": [79, 80],
+    "duration": 178.311837
+  },
+  "49": {
+    "title": "Higher Love",
+    "album": "Higher Love",
+    "release_date": "21/08/2018",
+    "cover": "./lib/assets/img/covers/track-covers/Kygo, Whitney Houston - Higher Love.jpg",
+    "path": "./lib/assets/music/tropical house/Kygo, Whitney Houston - Higher Love.mp3",
+    "artist_id": [79, 81],
+    "duration": 228.310204
+  },
+  "50": {
+    "title": "In My Bones",
+    "album": "In My Bones",
+    "release_date": "21/10/2011",
+    "cover": "./lib/assets/img/covers/track-covers/Lost Frequencies, David Kushner - In My Bones.jpg",
+    "path": "./lib/assets/music/tropical house/Lost Frequencies, David Kushner - In My Bones.mp3",
+    "artist_id": [82, 83],
+    "duration": 156.212245
+  },
+  "51": {
+    "title": "Kosandra",
+    "album": "Kosandra",
+    "release_date": "22/05/2021",
+    "cover": "./lib/assets/img/covers/track-covers/Miyagi & Andy Panda - Kosandra.jpg",
+    "path": "./lib/assets/music/russian rap/Miyagi & Andy Panda - Kosandra.mp3",
+    "artist_id": [84],
+    "duration": 221.466122
+  },
+  "52": {
+    "title": "Патрон",
+    "album": "Патрон",
+    "release_date": "13/11/2020",
+    "cover": "./lib/assets/img/covers/track-covers/Miyagi & Andy Panda - Патрон.jpg",
+    "path": "./lib/assets/music/russian rap/Miyagi & Andy Panda - Патрон.mp3",
+    "artist_id": [84],
+    "duration": 225.044898
+  },
+  "53": {
+    "title": "Angel",
+    "album": "Angel",
+    "release_date": "10/01/2018",
+    "cover": "./lib/assets/img/covers/track-covers/Miyagi - Angel.jpg",
+    "path": "./lib/assets/music/russian rap/Miyagi - Angel.mp3",
+    "artist_id": [85],
+    "duration": 202.396735
+  },
+  "54": {
+    "title": "Minor",
+    "album": "Minor",
+    "release_date": "26/07/2021",
+    "cover": "./lib/assets/img/covers/track-covers/Miyagi - Minor.jpg",
+    "path": "./lib/assets/music/russian rap/Miyagi - Minor.mp3",
+    "artist_id": [85],
+    "duration": 175.830204
+  },
+  "55": {
+    "title": "Таблетка",
+    "album": "Таблетка",
+    "release_date": "20/09/2024",
+    "cover": "./lib/assets/img/covers/track-covers/PLOHOYPAREN - Таблетка.jpg",
+    "path": "./lib/assets/music/russian rap/PLOHOYPAREN - Таблетка.mp3",
+    "artist_id": [86],
+    "duration": 89.835102
+  },
+  "56": {
+    "title": "Treehouse",
+    "album": "Treehouse",
+    "release_date": "01/01/2016",
+    "cover": "./lib/assets/img/covers/track-covers/Alex G - Treehouse.jpg",
+    "path": "./lib/assets/music/indie/Alex G - Treehouse.mp3",
+    "artist_id": [87],
+    "duration": 158.066939
+  },
+  "57": {
+    "title": "Genesis",
+    "album": "Genesis",
+    "release_date": "15/09/2020",
+    "cover": "./lib/assets/img/covers/track-covers/Grimes - Genesis.jpg",
+    "path": "./lib/assets/music/indie/Grimes - Genesis.mp3",
+    "artist_id": [88],
+    "duration": 255.425306
+  },
+  "58": {
+    "title": "Vision - Slowed",
+    "album": "Vision",
+    "release_date": "17/12/2019",
+    "cover": "./lib/assets/img/covers/track-covers/Hucci - Vision [Slowed Version].jpg",
+    "path": "./lib/assets/music/indie/Hucci - Vision [Slowed Version].mp3",
+    "artist_id": [89],
+    "duration": 299.62449
+  },
+  "59": {
+    "title": "NOOKS OF PILTOVER",
+    "album": "NOOKS OF PILTOVER",
+    "release_date": "05/10/2024",
+    "cover": "./lib/assets/img/covers/track-covers/SØMATIC - NOOKS OF PILTOVER.jpg",
+    "path": "./lib/assets/music/indie/SØMATIC - NOOKS OF PILTOVER.wav",
+    "artist_id": [14],
+    "duration": 90
+  },
+  "60": {
+    "title": "Harpy Hare",
+    "album": "Harpy Hare",
+    "release_date": "23/06/2021",
+    "cover": "./lib/assets/img/covers/track-covers/Yaelokre - Harpy Hare.jpg",
+    "path": "./lib/assets/music/indie/Yaelokre - Harpy Hare.mp3",
+    "artist_id": [90],
+    "duration": 180.976327
+  }
+}

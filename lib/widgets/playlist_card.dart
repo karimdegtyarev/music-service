@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_service/views/playlist_page.dart';
-import '../models/playlist_category.dart';
+import '../models/playlist_model.dart';
 
 class PlaylistCard extends StatelessWidget {
   final Playlist playlist;
@@ -21,30 +21,27 @@ class PlaylistCard extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Container(
-                    width: 150,
-                      height: 150,
-                      decoration: BoxDecoration(
-                        color: Colors.lightGreenAccent,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Image.network(
-                        playlist.imageUrl,
-                        fit: BoxFit.fill,
-                      )),
+                  SizedBox(
+                    width: 300,
+                    height: 150,
+                    child: Image.asset(
+                      playlist.imageUrl.replaceFirst('./lib/', ''),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   Positioned(
-                    bottom: 0,
-                    right: 0,
+                    bottom: 5,
+                    right: 5,
                     child: Row(
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: const Color.fromARGB(220, 76, 175, 80),
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: const Icon(
                             Icons.play_arrow_rounded,
-                            color: Colors.black,
+                            color: Color.fromARGB(210, 0, 0, 0),
                             size: 50,
                           ),
                         )

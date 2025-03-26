@@ -1,15 +1,17 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_service/models/playlist_category.dart';
+import 'package:music_service/models/playlist_model.dart';
 import 'package:music_service/views/profile_page.dart';
 import 'package:music_service/widgets/notifications.dart';
-import 'package:music_service/widgets/playlist_category.dart';
+import 'package:music_service/models/playlist_category.dart';
 
 class HomePage extends StatefulWidget {
-  final List<PlaylistCategory> categorieslist;
+  final PlaylistCategories playlistData;
+  final List<String> notifications;
 
-  const HomePage({super.key, required this.categorieslist});
+  const HomePage(
+      {super.key, required this.playlistData, required this.notifications});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -17,11 +19,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _showNotifications = false;
-  final List<String> _notifications = [
-    'Новый релиз: Arctic Monkeys - The Car',
-    'Ваш персональный микс готов!',
-    '3 новых подкаста в вашей подборке'
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +44,12 @@ class _HomePageState extends State<HomePage> {
             icon: Stack(
               children: [
                 Icon(
-                    _notifications.isNotEmpty
-                        ? Icons.notifications
-                        : Icons.notifications_none,
-                    color: Colors.lightGreenAccent,),
-                if (_notifications.isNotEmpty)
+                  widget.notifications.isNotEmpty
+                      ? Icons.notifications
+                      : Icons.notifications_none,
+                  color: Colors.lightGreenAccent,
+                ),
+                if (widget.notifications.isNotEmpty)
                   Positioned(
                     right: 0,
                     child: Container(
@@ -60,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.red,
                         shape: BoxShape.circle,
                       ),
-                      child: Text(_notifications.length.toString(),
+                      child: Text(widget.notifications.length.toString(),
                           style: const TextStyle(
                               fontSize: 10, color: Colors.white)),
                     ),
@@ -92,7 +90,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 15),
                 child: Text(
                   "Home",
                   style: GoogleFonts.balsamiqSans(
@@ -104,10 +102,10 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: ListView.builder(
                   padding: const EdgeInsets.only(top: 16, bottom: 24),
-                  itemCount: widget.categorieslist.length,
+                  itemCount: widget.playlistData.categories.length,
                   itemBuilder: (context, index) {
                     return CategorySection(
-                      category: widget.categorieslist[index],
+                      category: widget.playlistData.categories[index],
                     );
                   },
                 ),
@@ -129,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                     right: 20,
                   ),
                   child: NotificationBanner(
-                    notifications: _notifications,
+                    notifications: widget.notifications,
                     onClose: _toggleNotifications,
                   ),
                 ),

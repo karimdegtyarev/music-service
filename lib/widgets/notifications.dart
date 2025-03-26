@@ -1,0 +1,119 @@
+import 'package:flutter/material.dart';
+
+class NotificationBanner extends StatefulWidget {
+  final List<String> notifications;
+  final VoidCallback onClose;
+  final double topOffset;
+  final double rightOffset;
+
+  const NotificationBanner({
+    super.key,
+    required this.notifications,
+    required this.onClose,
+    this.topOffset = 70,
+    this.rightOffset = 20,
+  });
+
+  @override
+  State<NotificationBanner> createState() => _NotificationBannerState();
+}
+
+class _NotificationBannerState extends State<NotificationBanner> {
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      elevation: 8,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.8,
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.of(context).size.height * 0.6,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.grey[900],
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _buildHeader(),
+            const Divider(height: 20),
+            _buildNotificationList(),
+          ],
+        ),
+      ),
+    );
+  }
+
+
+  Widget _buildHeader() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const Text(
+          'Уведомления',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
+        ),
+        IconButton(
+          icon: const Icon(Icons.close, size: 20),
+          onPressed: widget.onClose,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildNotificationList() {
+    return widget.notifications.isEmpty
+        ? const Text('Нет новых уведомлений')
+        : Column(
+      children: widget.notifications
+          .map((notification) => _NotificationItem(
+        text: notification,
+        onTap: () => _handleNotificationTap(notification),
+      ))
+          .toList(),
+    );
+  }
+
+  void _handleNotificationTap(String notification) {
+    // Обработка нажатия на уведомление
+    print('Нажато уведомление: $notification');
+  }
+}
+
+class _NotificationItem extends StatelessWidget {
+  final String text;
+  final VoidCallback onTap;
+
+  const _NotificationItem({
+    required this.text,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Row(
+          children: [
+            const Icon(Icons.notifications_none, size: 18),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                text,
+                style: const TextStyle(fontSize: 14),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -55,7 +55,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           Text(
             _iconNames[index],
-            style: GoogleFonts.permanentMarker(
+            style: GoogleFonts.balsamiqSans(
               color: isSelected ? Colors.lightGreenAccent : Colors.white,
               fontSize: 16,
             ),

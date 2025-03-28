@@ -17,7 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Colors.transparent,
       ),
       body: const Text(
-        'Содержимое приложения',
+        'Профиль',
         style: TextStyle(color: Colors.lightGreenAccent),
       ),
       //bottomNavigationBar: const BottomNavBar(),

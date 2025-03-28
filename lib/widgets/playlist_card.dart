@@ -35,14 +35,16 @@ class PlaylistCard extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
+                          width: 40,
+                          height: 40,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(220, 76, 175, 80),
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: const Icon(
                             Icons.play_arrow_rounded,
-                            color: Color.fromARGB(210, 0, 0, 0),
-                            size: 50,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
                           ),
                         )
                       ],
@@ -69,9 +71,12 @@ class PlaylistCard extends StatelessWidget {
     );
   }
 
+  
+
+
   void _openPlaylist(BuildContext context, String id) {
     log("Navigating to Playlist Page");
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const PlaylistPage()));
+        context, MaterialPageRoute(builder: (context) => const PlaylistPage(tracks: [],)));
   }
 }

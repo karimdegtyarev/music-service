@@ -28,7 +28,7 @@ class _NotificationBannerState extends State<NotificationBanner> {
       elevation: 8,
       borderRadius: BorderRadius.circular(8),
       child: Container(
-        width: MediaQuery.of(context).size.width*0.6,
+        width: MediaQuery.of(context).size.width * 0.8,
         constraints: BoxConstraints(
           maxHeight: MediaQuery.of(context).size.height * 0.6,
         ),
@@ -54,7 +54,7 @@ class _NotificationBannerState extends State<NotificationBanner> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 20),
+          padding: const EdgeInsets.only(left: 20, top: 10),
           child: Text(
             'Уведомления',
             style: GoogleFonts.balsamiqSans(
@@ -63,13 +63,16 @@ class _NotificationBannerState extends State<NotificationBanner> {
             ),
           ),
         ),
-        IconButton(
-          icon: const Icon(
-            Icons.close,
-            size: 20,
+        Padding(
+          padding: const EdgeInsets.only(left: 20, top: 8),
+          child: IconButton(
+            icon: const Icon(
+              Icons.close,
+              size: 20,
+            ),
+            onPressed: widget.onClose,
           ),
-          onPressed: widget.onClose,
-        ),
+        )
       ],
     );
   }
@@ -110,10 +113,13 @@ class _NotificationItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: Row(
           children: [
-            const Icon(
-              Icons.notifications_none,
-              size: 18,
-              color: Colors.lightGreenAccent,
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Icon(
+                Icons.notifications_none,
+                size: 18,
+                color: Colors.lightGreenAccent,
+              ),
             ),
             const SizedBox(width: 10),
             Expanded(

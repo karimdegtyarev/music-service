@@ -48,8 +48,8 @@
     "title": "FREAKS FUNK",
     "album": "FREAKS FUNK",
     "release_date": "06/12/2024",
-    "cover": "./lib/assets/img/covers/track-covers/SØMATIC - FREAKS FUNK.jpg",
-    "path": "./lib/assets/music/brazilian-funk/SØMATIC - FREAKS FUNK.wav",
+    "cover": "./lib/assets/img/covers/track-covers/SOMATIC - FREAKS FUNK.jpg",
+    "path": "./lib/assets/music/brazilian-funk/SOMATIC - FREAKS FUNK.wav",
     "artist_id": [14],
     "duration": 98.181837
   },
@@ -338,8 +338,8 @@
     "title": "I Can Fly",
     "album": "I Can Fly",
     "release_date": "03/01/2024",
-    "cover": "./lib/assets/img/covers/track-covers/SØMATIC - I Can Fly.jpg",
-    "path": "./lib/assets/music/phonk/SØMATIC - I Can Fly.wav",
+    "cover": "./lib/assets/img/covers/track-covers/SOMATIC - I Can Fly.jpg",
+    "path": "./lib/assets/music/phonk/SOMATIC - I Can Fly.wav",
     "artist_id": [14],
     "duration": 159.272744
   },
@@ -527,8 +527,8 @@
     "title": "NOOKS OF PILTOVER",
     "album": "NOOKS OF PILTOVER",
     "release_date": "05/10/2024",
-    "cover": "./lib/assets/img/covers/track-covers/SØMATIC - NOOKS OF PILTOVER.jpg",
-    "path": "./lib/assets/music/indie/SØMATIC - NOOKS OF PILTOVER.wav",
+    "cover": "./lib/assets/img/covers/track-covers/SOMATIC - NOOKS OF PILTOVER.jpg",
+    "path": "./lib/assets/music/indie/SOMATIC - NOOKS OF PILTOVER.wav",
     "artist_id": [14],
     "duration": 90
   },

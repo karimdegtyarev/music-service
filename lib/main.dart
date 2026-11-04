@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:music_service/services/playlist_parser.dart';
 import 'package:music_service/views/explore_page.dart';
 import 'package:music_service/views/favorites_page.dart';
 import 'package:music_service/views/search_page.dart';
 import 'package:music_service/widgets/bottom_nav_bar.dart';
+import 'package:music_service/widgets/player_widget.dart';
+
 import 'models/playlist_model.dart';
 import 'views/home_page.dart';
+import 'providers/player_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Загрузка данных
   final playlistData = await PlaylistParser.parsePlaylists();
 
-  runApp(MyApp(playlistData: playlistData));
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => PlayerProvider(),
+      child: MyApp(playlistData: playlistData),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -33,10 +42,10 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    final List<String> notifications = [
+    final notifications = [
       'Новый релиз: Arctic Monkeys - The Car',
       'Ваш персональный микс готов!',
-      '3 новых подкаста в вашей подборке'
+      '3 новых подкаста в вашей подборке',
     ];
 
     _pages = [
@@ -64,9 +73,15 @@ class _MyAppState extends State<MyApp> {
           index: _currentIndex,
           children: _pages,
         ),
-        bottomNavigationBar: BottomNavBar(
-          currentIndex: _currentIndex,
-          onTap: _onItemTapped,
+        bottomNavigationBar: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const PlayerWidget(),
+            BottomNavBar(
+              currentIndex: _currentIndex,
+              onTap: _onItemTapped,
+            ),
+          ],
         ),
       ),
     );

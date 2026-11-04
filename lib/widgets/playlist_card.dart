@@ -1,4 +1,5 @@
 import 'dart:developer';
+import '../services/track_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_service/views/playlist_page.dart';
@@ -12,7 +13,7 @@ class PlaylistCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _openPlaylist(context, playlist.id),
+      onTap: () => _openPlaylist(context, playlist),
       child: SizedBox(
           width: 150,
           height: 200,
@@ -71,12 +72,33 @@ class PlaylistCard extends StatelessWidget {
     );
   }
 
-  
 
 
-  void _openPlaylist(BuildContext context, String id) {
-    log("Navigating to Playlist Page");
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const PlaylistPage(tracks: [],)));
+
+  Future<void> _openPlaylist(BuildContext context, Playlist playlist) async {
+    try {
+      final allTracks = await TrackParser.parseTracks();
+
+      final playlistTracks = allTracks.where((track) {
+        return playlist.tracks.contains(int.tryParse(track.id));
+      }).toList();
+
+      if (!context.mounted) return;
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PlaylistPage(tracks: playlistTracks),
+        ),
+      );
+    } catch (e) {
+      log('Error opening playlist: $e');
+
+      if (!context.mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Не удалось открыть плейлист: $e')),
+      );
+    }
   }
 }

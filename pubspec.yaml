@@ -40,6 +40,7 @@ dependencies:
   just_audio: ^0.9.34
   audio_session: ^0.1.15
   provider: ^6.0.5
+  just_audio_windows: ^0.2.3
 
 dev_dependencies:
   flutter_test:
@@ -65,12 +66,23 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+    # To add assets to your application, add an assets section, like this:
   assets:
-    - ../music_service/assets/playlists.json
-    - ../music_service/assets/img/covers/genre-playlists/
-    - ../music_service/assets/img/covers/track-covers/
-    - ../music_service/assets/tracks.json
+    - assets/tracks.json
+    - assets/playlists.json
+
+    - assets/music/brazilian-funk/
+    - assets/music/drum-and-bass/
+    - assets/music/edm/
+    - assets/music/hip-hop/
+    - assets/music/indie/
+    - assets/music/phonk/
+    - assets/music/russian rap/
+    - assets/music/tropical house/
+
+    - assets/img/covers/track-covers/
+    - assets/img/covers/genre-playlists/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

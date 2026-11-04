@@ -1,10 +1,11 @@
-import 'dart:math';
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../models/track_model.dart';
+import 'package:provider/provider.dart';
 
-class TrackWidget extends StatefulWidget {
+import '../models/track_model.dart';
+import '../providers/player_provider.dart';
+
+class TrackWidget extends StatelessWidget {
   final Track track;
   final VoidCallback? onTap;
 
@@ -15,33 +16,24 @@ class TrackWidget extends StatefulWidget {
   });
 
   @override
-  State<TrackWidget> createState() => _TrackWidgetState();
-}
-
-class _TrackWidgetState extends State<TrackWidget>
-    with TickerProviderStateMixin {
-  bool isPlay = false;
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller =
-        AnimationController(duration: const Duration(milliseconds: 100), vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final player = context.watch<PlayerProvider>();
+
+    final isCurrentTrack = player.currentTrack?.id == track.id;
+    final isPlaying = isCurrentTrack && player.isPlaying;
+
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: widget.onTap,
+        onTap: () {
+          if (onTap != null) {
+            onTap!();
+          } else if (isCurrentTrack) {
+            player.togglePlay();
+          } else {
+            player.play(track);
+          }
+        },
         borderRadius: BorderRadius.circular(12),
         child: Container(
           height: 81,
@@ -51,91 +43,68 @@ class _TrackWidgetState extends State<TrackWidget>
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
-            children: [
-              _buildAlbumArt(),
-              const SizedBox(width: 16),
-              Expanded(
-                flex: 5,
-                child: _buildTrackInfo(),
+              children: [
+          ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            track.imageUrl,
+            width: 56,
+            height: 56,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) => Container(
+            width: 56,
+            height: 56,
+            color: Colors.grey[800],
+            child: const Icon(
+              Icons.music_note,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+      const SizedBox(width: 16),
+      Expanded(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              track.title,
+              style: GoogleFonts.balsamiqSans(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
               ),
-              const Spacer(),
-              _buildPlayButton(),
-              //Expanded(flex: 2,child: ),
-            ],
-          ),
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              track.albumName,
+              style: GoogleFonts.balsamiqSans(
+                color: Colors.grey[400],
+                fontSize: 12,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              _formatDuration(track.duration),
+              style: TextStyle(
+                color: Colors.grey[600],
+                fontSize: 12,
+              ),
+            ),
+          ],
         ),
       ),
-    );
-  }
-
-  Widget _buildAlbumArt() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
-      child: Image.asset(
-        widget.track.imageUrl.replaceFirst("./lib/", ""),
-        width: 56,
-        height: 56,
-        fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => Container(
-          width: 56,
-          height: 56,
-          color: Colors.grey[800],
-          child: const Icon(Icons.music_note, color: Colors.white),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTrackInfo() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          widget.track.title,
-          style: GoogleFonts.balsamiqSans(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-          overflow: TextOverflow.ellipsis,
-        ),
-        //const SizedBox(height: 4),
-        Text(
-          widget.track.albumName,
-          style: GoogleFonts.balsamiqSans(
-            color: Colors.grey[400],
-            fontSize: 12,
-          ),
-          overflow: TextOverflow.ellipsis,
-        ),
-        Text(
-          _formatDuration(widget.track.duration),
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 12,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildPlayButton() {
-    return GestureDetector(
-      onTap: () {
-        if (isPlay == false) {
-          _controller.forward();
-          isPlay = true;
-        } else {
-          _controller.reverse();
-          isPlay = false;
-        }
-      },
-      child: AnimatedIcon(
-        icon: AnimatedIcons.play_pause,
-        progress: _controller,
+      const SizedBox(width: 8),
+      Icon(
+        isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill,
         size: 30,
         color: Colors.lightGreenAccent,
       ),
+      ],
+    ),
+    ),
+    ),
     );
   }
 

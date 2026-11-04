@@ -1,5 +1,5 @@
+
 import 'package:flutter/material.dart';
-//import 'package:music_service/models/track_model.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/player_provider.dart';
@@ -9,54 +9,96 @@ class PlayerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final player = Provider.of<PlayerProvider>(context);
+    final player = context.watch<PlayerProvider>();
+    final track = player.currentTrack;
 
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      height: player.currentTrack != null ? 80 : 0,
+    if (track == null) {
+      return const SizedBox.shrink();
+    }
+
+    return Container(
+      height: 68,
       color: Colors.grey[900],
-      child: player.currentTrack == null
-          ? const SizedBox.shrink()
-          : Column(
+      child: Column(
         children: [
           LinearProgressIndicator(
+            minHeight: 2,
             value: player.progress,
             backgroundColor: Colors.grey[800],
-            valueColor: const AlwaysStoppedAnimation<Color>(Colors.green),
+            valueColor:
+            const AlwaysStoppedAnimation<Color>(Colors.green),
           ),
-          ListTile(
-            leading: Image.asset(
-              player.currentTrack!.imageUrl,
-              width: 40,
-              height: 40,
-              fit: BoxFit.cover,
-            ),
-            title: Text(
-              player.currentTrack!.title,
-              style: const TextStyle(color: Colors.white),
-              overflow: TextOverflow.ellipsis,
-            ),
-            subtitle: Text(
-              player.currentTrack!.albumName,
-              style: TextStyle(color: Colors.grey[400]),
-              overflow: TextOverflow.ellipsis,
-            ),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
+          Expanded(
+            child: Row(
               children: [
+                const SizedBox(width: 10),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: Image.asset(
+                    track.imageUrl,
+                    width: 44,
+                    height: 44,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) =>
+                    const SizedBox(
+                      width: 44,
+                      height: 44,
+                      child: Icon(Icons.music_note, color: Colors.white),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        track.title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        track.albumName,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Colors.grey[400],
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 IconButton(
+                  constraints: const BoxConstraints(
+                    minWidth: 40,
+                    minHeight: 40,
+                  ),
+                  padding: EdgeInsets.zero,
                   icon: Icon(
-                    player.isPlaying
-                        ? Icons.pause
-                        : Icons.play_arrow,
+                    player.isPlaying ? Icons.pause : Icons.play_arrow,
                     color: Colors.white,
                   ),
                   onPressed: player.togglePlay,
                 ),
                 IconButton(
-                  icon: const Icon(Icons.skip_next, color: Colors.white),
+                  constraints: const BoxConstraints(
+                    minWidth: 40,
+                    minHeight: 40,
+                  ),
+                  padding: EdgeInsets.zero,
+                  icon: const Icon(
+                    Icons.skip_next,
+                    color: Colors.white,
+                  ),
                   onPressed: player.next,
                 ),
+                const SizedBox(width: 6),
               ],
             ),
           ),

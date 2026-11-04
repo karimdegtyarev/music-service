@@ -1,5 +1,6 @@
 import 'dart:async';
-
+import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -15,12 +16,16 @@ class PlayerProvider with ChangeNotifier {
   List<Track> _queue = [];
   int _currentIndex = -1;
 
+  bool _sourceLoaded = false;
+  final Map<String, String> _cachedAudioFiles = {};
+
   late final StreamSubscription<PlayerState> _playerStateSubscription;
   late final StreamSubscription<Duration> _positionSubscription;
 
   Track? get currentTrack => _currentTrack;
   double get progress => _progress;
   bool get isPlaying => _isPlaying;
+  Duration? get duration => _audioPlayer.duration;
 
   List<Track> get queue => List.unmodifiable(_queue);
 
@@ -76,12 +81,31 @@ class PlayerProvider with ChangeNotifier {
     if (_currentTrack?.id != track.id) {
       _currentTrack = track;
       _progress = 0;
+      _sourceLoaded = false;
       notifyListeners();
-
-      await _audioPlayer.setAsset(track.musicUrl);
     }
 
-    await _audioPlayer.play();
+    try {
+      if (!_sourceLoaded) {
+        debugPrint('🎵 Попытка воспроизведения: ${track.title}');
+        debugPrint('📁 Путь: ${track.musicUrl}');
+        final filePath = await _prepareAudioFile(track);
+        await _audioPlayer.setFilePath(filePath);
+        _sourceLoaded = true;
+      }
+
+      await _audioPlayer.play();
+    } catch (error, stackTrace) {
+      _sourceLoaded = false;
+      _isPlaying = false;
+
+      debugPrint('Ошибка воспроизведения: ${track.title}');
+      debugPrint('Путь: ${track.musicUrl}');
+      debugPrint('Причина: $error');
+      debugPrintStack(stackTrace: stackTrace);
+
+      notifyListeners();
+    }
   }
 
   Future<void> togglePlay() async {
@@ -110,6 +134,39 @@ class PlayerProvider with ChangeNotifier {
 
   Future<void> seek(Duration position) async {
     await _audioPlayer.seek(position);
+  }
+
+  Future<String> _prepareAudioFile(Track track) async {
+    final cachedPath = _cachedAudioFiles[track.musicUrl];
+
+    if (cachedPath != null && await File(cachedPath).exists()) {
+      return cachedPath;
+    }
+
+    final byteData = await rootBundle.load(track.musicUrl);
+
+    final bytes = byteData.buffer.asUint8List(
+      byteData.offsetInBytes,
+      byteData.lengthInBytes,
+    );
+
+    final tempDir = Directory.systemTemp;
+
+    final originalName = track.musicUrl.split('/').last;
+    final safeName = originalName.replaceAll(
+      RegExp(r'[^a-zA-Z0-9._-]'),
+      '_',
+    );
+
+    final file = File(
+      '${tempDir.path}${Platform.pathSeparator}${track.id}_$safeName',
+    );
+
+    await file.writeAsBytes(bytes, flush: true);
+
+    _cachedAudioFiles[track.musicUrl] = file.path;
+
+    return file.path;
   }
 
   @override

@@ -22,7 +22,7 @@ class PlaylistPage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(
-          'Плейлист',
+          'Playlist',
           style: GoogleFonts.permanentMarker(
             color: Colors.lightGreenAccent,
             fontSize: 20,

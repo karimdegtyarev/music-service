@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:music_service/services/track_parser.dart';
 import 'package:music_service/views/profile_page.dart';
 import 'package:music_service/widgets/track_widget.dart';
+import 'package:provider/provider.dart';
+import '../providers/player_provider.dart';
 
 import '../models/track_model.dart';
 import '../widgets/notifications.dart';
@@ -110,8 +112,25 @@ class _SearchPageState extends State<SearchPage> {
                   ? ListView.separated(
                       padding: const EdgeInsets.all(16),
                       itemCount: _searchResults.length,
-                      itemBuilder: (_, index) =>
-                          TrackWidget(track: _searchResults[index]),
+                      itemBuilder: (context, index) {
+                        final track = _searchResults[index];
+
+                        return TrackWidget(
+                          track: track,
+                          onTap: () {
+                            final player = context.read<PlayerProvider>();
+
+                            if (player.currentTrack?.id == track.id) {
+                              player.togglePlay();
+                            } else {
+                              player.setQueue(
+                                List<Track>.from(_searchResults),
+                                initialIndex: index,
+                              );
+                            }
+                          },
+                        );
+                      },
                       separatorBuilder: (_, __) => const SizedBox(height: 0),
                     )
                   : _buildEmptyState(),
@@ -173,7 +192,8 @@ class _SearchPageState extends State<SearchPage> {
               borderSide: const BorderSide(color: Colors.green),
               borderRadius: BorderRadius.circular(15),
             ),
-            contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           ),
         ),
       ),
@@ -189,7 +209,8 @@ class _SearchPageState extends State<SearchPage> {
           const SizedBox(height: 16),
           Text(
             'Start typing to find music',
-            style: GoogleFonts.balsamiqSans(color: Colors.grey[400], fontSize: 16),
+            style:
+                GoogleFonts.balsamiqSans(color: Colors.grey[400], fontSize: 16),
           ),
         ],
       ),

@@ -32,16 +32,25 @@ class _SearchPageState extends State<SearchPage> {
     _tracksFuture = TrackParser.parseTracks();
   }
 
-  void _onSearchChanged(String query) async {
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _onSearchChanged(String query) async {
     final allTracks = await _tracksFuture;
 
+    if (!mounted) return;
+
     setState(() {
-      _searchResults = query.isEmpty
+      _searchResults = query.trim().isEmpty
           ? []
-          : allTracks
-              .where((track) =>
-                  track.title.toLowerCase().contains(query.toLowerCase()))
-              .toList();
+          : allTracks.where((track) {
+        return track.title
+            .toLowerCase()
+            .contains(query.trim().toLowerCase());
+      }).toList();
     });
   }
 

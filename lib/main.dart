@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'providers/favorites_provider.dart';
 
 import 'package:music_service/services/playlist_parser.dart';
 import 'package:music_service/views/explore_page.dart';
@@ -18,8 +19,15 @@ void main() async {
   final playlistData = await PlaylistParser.parsePlaylists();
 
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => PlayerProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => PlayerProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => FavoritesProvider()..loadFavorites(),
+        ),
+      ],
       child: MyApp(playlistData: playlistData),
     ),
   );

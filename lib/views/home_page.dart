@@ -24,8 +24,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextButton(
-          child: Text(
+          title: Text(
             'Dynamic',
             style: GoogleFonts.permanentMarker(
               color: Colors.white,
@@ -33,10 +32,6 @@ class _HomePageState extends State<HomePage> {
               fontWeight: FontWeight.w900,
             ),
           ),
-          onPressed: () {
-            log("HomePage");
-          },
-        ),
         backgroundColor: Colors.transparent,
         actions: [
           IconButton(
@@ -89,16 +84,6 @@ class _HomePageState extends State<HomePage> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  "Home",
-                  style: GoogleFonts.balsamiqSans(
-                    color: Colors.white,
-                    fontSize: 40,
-                  ),
-                ),
-              ),
               Expanded(
                 child: ListView.builder(
                   padding: const EdgeInsets.only(top: 16, bottom: 24),

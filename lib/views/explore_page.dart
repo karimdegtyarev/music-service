@@ -1,7 +1,5 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
@@ -11,23 +9,17 @@ class ExplorePage extends StatefulWidget {
 }
 
 class _ExplorePageState extends State<ExplorePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextButton(
-          child: Text(
-            'Dynamic',
-            style: GoogleFonts.permanentMarker(
-              color: Colors.white,
-              fontSize: 40,
-              fontWeight: FontWeight.w900,
-            ),
+        title: Text(
+          'Dynamic',
+          style: GoogleFonts.permanentMarker(
+            color: Colors.white,
+            fontSize: 40,
+            fontWeight: FontWeight.w900,
           ),
-          onPressed: () {
-            log("ExplorePage");
-          },
         ),
         backgroundColor: Colors.transparent,
       ),

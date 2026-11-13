@@ -24,6 +24,9 @@ class PlayerProvider with ChangeNotifier {
   int _currentIndex = -1;
 
   Duration _position = Duration.zero;
+
+  final ValueNotifier<Duration> _positionNotifier =
+      ValueNotifier<Duration>(Duration.zero);
   Duration? _duration;
 
   bool _isPlaying = false;
@@ -55,6 +58,8 @@ class PlayerProvider with ChangeNotifier {
 
   Duration get position => _position;
 
+  ValueListenable<Duration> get positionListenable => _positionNotifier;
+
   Duration? get duration => _duration;
 
   List<Track> get queue => List.unmodifiable(_queue);
@@ -76,7 +81,7 @@ class PlayerProvider with ChangeNotifier {
 
     _positionSubscription = _audioPlayer.positionStream.listen((position) {
       _position = position;
-      notifyListeners();
+      _positionNotifier.value = position;
     });
 
     _durationSubscription = _audioPlayer.durationStream.listen((duration) {
@@ -93,10 +98,10 @@ class PlayerProvider with ChangeNotifier {
   }
 
   Future<void> setQueue(
-      List<Track> tracks, {
-        int initialIndex = 0,
-        bool autoPlay = true,
-      }) async {
+    List<Track> tracks, {
+    int initialIndex = 0,
+    bool autoPlay = true,
+  }) async {
     if (tracks.isEmpty) return;
 
     _originalQueue = List<Track>.from(tracks);
@@ -124,6 +129,7 @@ class PlayerProvider with ChangeNotifier {
 
       _currentTrack = selectedTrack;
       _position = Duration.zero;
+      _positionNotifier.value = Duration.zero;
       _duration = null;
       _loadedTrackId = null;
 
@@ -131,12 +137,11 @@ class PlayerProvider with ChangeNotifier {
     }
   }
 
-
   Future<void> play(Track track) async {
     final requestId = ++_playRequestId;
 
     final index = _queue.indexWhere(
-          (item) => item.id == track.id,
+      (item) => item.id == track.id,
     );
 
     if (index >= 0) {
@@ -151,7 +156,13 @@ class PlayerProvider with ChangeNotifier {
 
     if (isNewTrack) {
       _currentTrack = track;
-      _position = Duration.zero;
+      if (isNewTrack) {
+        _currentTrack = track;
+        _position = Duration.zero;
+        _positionNotifier.value = Duration.zero;
+        _duration = null;
+        _isPlaying = false;
+      }
       _duration = null;
       _isPlaying = false;
     }
@@ -175,16 +186,14 @@ class PlayerProvider with ChangeNotifier {
 
           await _audioPlayer.setFilePath(filePath);
           _loadedTrackId = track.id;
-        } else if (
-        _audioPlayer.processingState == ProcessingState.completed
-        ) {
+        } else if (_audioPlayer.processingState == ProcessingState.completed) {
           await _audioPlayer.seek(Duration.zero);
         }
       });
 
       // Ошибка загрузки не должна блокировать последующие операции.
       _sourceOperation = loadOperation.then<void>(
-            (_) {},
+        (_) {},
         onError: (Object error, StackTrace stackTrace) {
           debugPrint('Ошибка загрузки аудиоисточника: $error');
         },
@@ -196,7 +205,7 @@ class PlayerProvider with ChangeNotifier {
 
       // ВАЖНО: play() находится вне очереди загрузки.
       // Поэтому следующий трек можно загружать, не ожидая окончания текущего.
-      await _audioPlayer.play();
+      _startPlayback(requestId);
     } catch (error, stackTrace) {
       if (requestId != _playRequestId) return;
 
@@ -280,6 +289,18 @@ class PlayerProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void _startPlayback(int requestId) {
+    unawaited(
+      _audioPlayer.play().catchError((Object error) {
+        if (requestId != _playRequestId) return;
+
+        _isPlaying = false;
+        debugPrint('Ошибка запуска воспроизведения: $error');
+        notifyListeners();
+      }),
+    );
+  }
+
   void _applyShuffle() {
     final currentTrack =
         _currentTrack ?? (_currentIndex >= 0 ? _queue[_currentIndex] : null);
@@ -319,7 +340,7 @@ class PlayerProvider with ChangeNotifier {
     try {
       if (_repeatMode == RepeatMode.one) {
         await _audioPlayer.seek(Duration.zero);
-        await _audioPlayer.play();
+        _startPlayback(_playRequestId);
       } else if (_currentIndex < _queue.length - 1) {
         await next();
       } else if (_repeatMode == RepeatMode.all && _queue.isNotEmpty) {
@@ -376,6 +397,7 @@ class PlayerProvider with ChangeNotifier {
     _positionSubscription.cancel();
     _durationSubscription.cancel();
     _processingSubscription.cancel();
+    _positionNotifier.dispose();
 
     _audioPlayer.dispose();
 

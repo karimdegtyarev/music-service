@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'providers/favorites_provider.dart';
-
-import 'package:music_service/services/playlist_parser.dart';
-import 'package:music_service/views/explore_page.dart';
-import 'package:music_service/views/favorites_page.dart';
-import 'package:music_service/views/search_page.dart';
-import 'package:music_service/widgets/bottom_nav_bar.dart';
-import 'package:music_service/widgets/player_widget.dart';
 
 import 'models/playlist_model.dart';
-import 'views/home_page.dart';
+import 'providers/favorites_provider.dart';
 import 'providers/player_provider.dart';
+import 'services/playlist_parser.dart';
+import 'views/explore_page.dart';
+import 'views/favorites_page.dart';
+import 'views/home_page.dart';
+import 'views/search_page.dart';
+import 'widgets/bottom_nav_bar.dart';
+import 'widgets/player_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,9 +20,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => PlayerProvider(),
-        ),
+        ChangeNotifierProvider(create: (_) => PlayerProvider()),
         ChangeNotifierProvider(
           create: (_) => FavoritesProvider()..loadFavorites(),
         ),
@@ -76,7 +73,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dynamic',
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
+        canvasColor: Colors.black,
+      ),
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: IndexedStack(
           index: _currentIndex,
           children: _pages,

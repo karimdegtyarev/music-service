@@ -18,12 +18,19 @@ class TrackWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final player = context.watch<PlayerProvider>();
-    final favorites = context.watch<FavoritesProvider>();
-    final isFavorite = favorites.isFavorite(track);
+    final player = context.read<PlayerProvider>();
 
-    final isCurrentTrack = player.currentTrack?.id == track.id;
-    final isPlaying = isCurrentTrack && player.isPlaying;
+    final isCurrentTrack = context.select<PlayerProvider, bool>(
+      (p) => p.currentTrack?.id == track.id,
+    );
+
+    final isPlaying = context.select<PlayerProvider, bool>(
+      (p) => p.currentTrack?.id == track.id && p.isPlaying,
+    );
+
+    final isFavorite = context.select<FavoritesProvider, bool>(
+      (p) => p.isFavorite(track),
+    );
 
     return Material(
       color: Colors.transparent,
@@ -99,12 +106,19 @@ class TrackWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Icon(
-                isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill,
-                size: 30,
-                color: Colors.lightGreenAccent,
+              IconButton(
+                constraints: const BoxConstraints(
+                  minWidth: 40,
+                  minHeight: 40,
+                ),
+                padding: EdgeInsets.zero,
+                icon: Icon(
+                  size: 30,
+                  isPlaying ? Icons.pause_circle_filled : Icons.play_circle_filled,
+                  color: Colors.lightGreenAccent,
+                ),
+                onPressed: player.togglePlay,
               ),
-              const SizedBox(width: 8),
               IconButton(
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(
@@ -113,7 +127,7 @@ class TrackWidget extends StatelessWidget {
                 ),
                 icon: Icon(
                   isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: isFavorite ? Colors.greenAccent : Colors.white,
+                  color: isFavorite ? Colors.lightGreenAccent : Colors.white,
                 ),
                 onPressed: () {
                   context.read<FavoritesProvider>().toggleFavorite(track);
